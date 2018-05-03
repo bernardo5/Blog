@@ -1,0 +1,35 @@
+{% extends "master.html" %}
+
+{% block title %}Honest Book Reviews{%endblock%}
+
+{% block ArticleHeader %}
+<h1>Review List</h1>
+{% endblock %}
+
+
+{% block PlainText %}
+
+<div class="myText">
+
+	<table>
+		<tr>
+			<td class="initialTDS">
+				<a href="{{ url_for('richDadPoorDad') }}"><img class="bookImage" style="width: 25%; height: 20%;" src="{{url_for('static', filename='richdadpoordad.jpg')}}"></a>
+				<p><a href="{{ url_for('richDadPoorDad') }}">Rich Dad Poor Dad</a></p>
+			</td>
+			<td class="initialTDS">
+				<a href="{{ url_for('ComoFazerAmigosEINfluenciarPessoas') }}"><img class="bookImage" style="width: 25%; height: 10%;" src="{{url_for('static', filename='ComoFazerAmigosEINfluenciarPessoas.jpg')}}"></a>
+				<p><a href="{{ url_for('ComoFazerAmigosEINfluenciarPessoas') }}">How To Make Friends and Influence People</a></p>
+			</td>
+		</tr>
+		<tr>
+			<td class="initialTDS">
+				<a href="{{ url_for('DOTCOM') }}"><img class="bookImage" style="width: 25%; height: 10%;" src="{{url_for('static', filename='DOTCOM.jpg')}}"></a>
+				<p><a href="{{ url_for('DOTCOM') }}">DOTCOM Secrets</a></p>
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+{% endblock %}

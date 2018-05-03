@@ -1,0 +1,69 @@
+.myText { 
+	font-family: "Arial", Helvetica, sans-serif;
+	font-size : 20px;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.image{
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .myText {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .myText {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .myText {
+    width: 1170px;
+  }
+}
+
+.quote { 
+	font-family: "Arial", Helvetica, sans-serif;
+	font-size : 30px;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px #bfc0c1;
+	background-color: #edeeef;
+	font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .quote {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .quote {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .quote {
+    width: 1170px;
+  }
+}
+
+footer{ width: 100%; background: #000000; bottom: 0; height: 50px}
+
+.bookImage{
+  display: block;
+  margin: 0 auto;
+}
+
+.initialTDS{
+  text-align:center; 
+  vertical-align:middle;
+}

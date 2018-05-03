@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+
+{% block title %}About Us{%endblock%}
+
+{% block ArticleHeader %}
+<h1>Blog Purpose</h1>
+{% endblock %}
+
+{% block PlainText %}
+
+<p class="myText">Hello World! My name is Bernardo, and I am an engineer that loves to travel and be constantly learn new things! And what is the better way of learning new things besides experience itself? Reading! Through reading, you are able to live through out other people experiences, either they represent success or failure. Better than imagining is to put the messages you read into action in a daily basis!</p>
+
+<p></p>
+
+<p class="myText">On another hand, the world is full of information… you want to learn how to code, decide where to travel, what is the best way to face a problem, the best way to make money, you name it…you go online and… there are hundreds, thousands of books about the topic you want to know more about… Wouldn’t it be better if someone else that had already read it, could simply post his/her opinion before you actually buy the book?</p>
+
+<p></p>
+
+<p class="myText">What can you expect from my posts? An honest review through out the books I’ll be reading starting from 2018. Hope it helps you in your decision! Have fun reading!</p>
+
+<p></p>
+
+<table class="quote">
+	<tr>
+		<td style="vertical-align: top;">
+			<img class="quoteImage" src="{{url_for('static', filename='quote.jpg')}}">
+		</td>
+		<td>
+			<p>"Books serve to show a man that those original thoughts of his aren’t very new after all”</p>
+			<p>Abraham Lincoln</p>
+		</td>
+	</tr>
+
+</table>
+
+{% endblock %}
