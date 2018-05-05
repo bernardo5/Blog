@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, make_response, redirect, abor
 from flask_bootstrap import Bootstrap
 
 app=Flask(__name__)
+app.debug=True
 bootstrap=Bootstrap(app)
 
 @app.route('/')
