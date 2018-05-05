@@ -76,7 +76,7 @@ footer{ width: 100%; background: #000000; bottom: 0; height: 50px}
 }
 
 .book_wrapper {
-  max-width: 40%;
+  max-width: 30%;
   min-width: 200px;
   margin: 20px;
 }
@@ -130,5 +130,23 @@ footer{ width: 100%; background: #000000; bottom: 0; height: 50px}
 
 .footStuff {
   margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 45px;
+  line-height: 22px; /* Vertically center the text there */
+  background-color: #222;
+  border-color: #080808;
+}
+
+.footer_text{
+  font-weight: 900;
+  font-size: 115%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9d9d9d;
+  margin-top: 1.4%;
+  margin-left: 3%;
 }
 
