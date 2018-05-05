@@ -9,6 +9,7 @@
 {% endblock %}
 
 
+	
 
 {%block navbar%}
 
@@ -40,13 +41,20 @@
 {%endblock%}
 
 {%block content%}
+<div class="tudinho" style="height: 100%">
 
-<div class="container">
-	<div class="page-header">
-		{% block ArticleHeader %}{% endblock %}
+	<div class="container">
+		<div class="page-header">
+			{% block ArticleHeader %}{% endblock %}
+		</div>
 	</div>
-</div>
-<div class="PlainText">
-	{% block PlainText %}{% endblock %}
+	<div class="PlainText">
+		{% block PlainText %}{% endblock %}
+	</div>
+
+	{%- block footer %}
+	<footer class="footStuff">&copy; 2016 Awesome, Inc.</footer>
+	{%- endblock footer %}
+
 </div>
 {%endblock%}
