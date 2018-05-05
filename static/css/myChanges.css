@@ -38,32 +38,29 @@ body {
   }
 }
 
-.quote { 
-	font-family: "Arial", Helvetica, sans-serif;
-	font-size : 30px;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
-	border: 1px #bfc0c1;
-	background-color: #edeeef;
-	font-style: italic;
+.quote_wrapper {
+  /*display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;*/
+  max-width: 75%;
+  min-width: 300px;
+  margin: 20px;
+  margin-left: 12%;
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 30px 30px 30px 30px;
 }
 
-@media (min-width: 768px) {
-  .quote {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .quote {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .quote {
-    width: 1170px;
-  }
+.quote { 
+  color: #0093c2;
+	font-family: 'Georgia',serif;
+  font-size: 72px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 72px;
+  left: 0;
+  top: 23px;
+  width: 90px;
 }
 
 footer{ width: 100%; background: #000000; bottom: 0; height: 50px}

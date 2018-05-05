@@ -25,3 +25,29 @@ How the site will work:
 * Landing page will fetch all the available books in the DB and present its images, titles and month of the review
 
 * When a book is selected, the backend fetches the text and images associated with the book and switches to the correspondant book page
+
+## How to run this code
+
+Installation requirements:
+
+1. Install VirtualEnv --> sudo apt-get install python-virtualenv
+
+2. Name your virtualenv to work on --> virtualenv <name>
+
+3. Activate it --> source <name>/bin/activate
+
+4. Install Flask --> pip install Flask
+
+5. Install Bootstrap --> pip install flask-bootstrap
+
+To run the code:
+
+1. Clone the repository
+
+2. Export the blog.py file --> export FLASK_APP=blog.py
+
+3. Run the application --> flask run
+
+4. Open Google Chrome and access http://127.0.0.1:5000/
+
+For developer mode use "export FLASK_ENV=development"
