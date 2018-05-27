@@ -2,10 +2,16 @@
   -webkit-font-smoothing: antialiased;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   min-height: 100vh !important;
   display: flex;
   flex-direction: column;
+  margin-bottom: 60px;
 }
 
 .myText { 
@@ -127,12 +133,12 @@ footer{ width: 100%; background: #000000; bottom: 0; height: 50px}
 
 .footStuff {
   margin-top: auto;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
+  // Set the fixed height of the footer here 
   height: 45px;
-  line-height: 22px; /* Vertically center the text there */
+  line-height: 22px; // Vertically center the text there 
   background-color: #222;
   border-color: #080808;
 }
