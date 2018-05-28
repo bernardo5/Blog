@@ -2,10 +2,16 @@
   -webkit-font-smoothing: antialiased;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   min-height: 100vh !important;
   display: flex;
   flex-direction: column;
+  margin-bottom: 60px;
 }
 
 .myText { 
@@ -38,32 +44,55 @@ body {
   }
 }
 
-.quote { 
-	font-family: "Arial", Helvetica, sans-serif;
-	font-size : 30px;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
-	border: 1px #bfc0c1;
-	background-color: #edeeef;
-	font-style: italic;
+.quote_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 75%;
+  min-width: 300px;
+  margin: 20px;
+  margin-left: 12%;
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 30px 30px 30px 30px;
 }
 
-@media (min-width: 768px) {
-  .quote {
-    width: 750px;
-  }
+.quote::before{
+  content: '\201C'; 
 }
-@media (min-width: 992px) {
-  .quote {
-    width: 970px;
-  }
+
+.quote { 
+  color: #0093c2;
+  font-family: 'Georgia',serif;
+  font-size: 72px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 72px;
+  left: 0;
+  text-align: center;
+  top: 23px;
+  max-width: 20%;
+  min-width: 5%;
 }
-@media (min-width: 1200px) {
-  .quote {
-    width: 1170px;
-  }
+
+.quote_text{
+  max-width: 80%;
+  margin: 10px;
+  font-style: italic;
+  font-family: inherit;
+  font-size: 129%;
+}
+
+.bookImageInline{
+  margin-left: auto;
+  margin-right: auto;
+  width: 32%;
+  height: 475px;
+}
+
+.bookImage{
+  width: auto;
+  height: 100%;
 }
 
 footer{ width: 100%; background: #000000; bottom: 0; height: 50px}
@@ -130,12 +159,12 @@ footer{ width: 100%; background: #000000; bottom: 0; height: 50px}
 
 .footStuff {
   margin-top: auto;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
+  // Set the fixed height of the footer here 
   height: 45px;
-  line-height: 22px; /* Vertically center the text there */
+  line-height: 22px; // Vertically center the text there 
   background-color: #222;
   border-color: #080808;
 }

@@ -12,18 +12,16 @@
 
 <p></p><p></p>
 
-<table class="quote">
-	<tr>
-		<td style="vertical-align: top;">
-			<img class="quoteImage" src="{{url_for('static', filename='quote.jpg')}}">
-		</td>
-		<td>
-			<p>{% block firstQuote%}{% endblock %}</p>
-			<p>{% block firstAuthorName%}{% endblock %}</p>
-		</td>
-	</tr>
+<div class="quote_wrapper">
 
-</table>
+	<div class="quote">  </div>
+
+	<div class="quote_text">
+		<p>{% block firstQuote%}{% endblock %}</p>
+		<p>{% block firstAuthorName%}{% endblock %}</p>
+	</div>
+
+</div>
 
 <p></p><p></p>
 
@@ -35,7 +33,7 @@
 
 <p></p><p></p>
 
-<div id="bookImageInline">
+<div class="bookImageInline">
 	{% block midBookImage %}
 
 	{%endblock%}
@@ -47,18 +45,16 @@
 
 <p></p><p></p>
 
-<table class="quote">
-	<tr>
-		<td style="vertical-align: top;">
-			<img class="quoteImage" src="{{url_for('static', filename='quote.jpg')}}">
-		</td>
-		<td>
-			<p>{% block secondQuote%}{% endblock %}</p>
-			<p>{% block secondAuthorName%}{% endblock %}</p>
-		</td>
-	</tr>
+<div class="quote_wrapper">
 
-</table>
+	<div class="quote">  </div>
+
+	<div class="quote_text">
+		<p>{% block secondQuote%}{% endblock %}</p>
+		<p>{% block secondAuthorName%}{% endblock %}</p>
+	</div>
+
+</div>
 
 <p></p><p></p>
 
