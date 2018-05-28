@@ -30,24 +30,24 @@ How the site will work:
 
 Installation requirements:
 
-1. Install VirtualEnv --> sudo apt-get install python-virtualenv
+1. Install VirtualEnv --> ```sudo apt-get install python-virtualenv```
 
-2. Name your virtualenv to work on --> virtualenv <name>
+2. Name your virtualenv to work on --> ```virtualenv <name>```
 
-3. Activate it --> source <name>/bin/activate
+3. Activate it --> ```source <name>/bin/activate```
 
-4. Install Flask --> pip install Flask
+4. Install Flask --> ```pip install Flask```
 
-5. Install Bootstrap --> pip install flask-bootstrap
+5. Install Bootstrap --> ```pip install flask-bootstrap```
 
 To run the code:
 
 1. Clone the repository
 
-2. Export the blog.py file --> export FLASK_APP=blog.py
+2. Export the blog.py file --> ```export FLASK_APP=blog.py```
 
-3. Run the application --> flask run
+3. Run the application --> ```flask run```
 
-4. Open Google Chrome and access http://127.0.0.1:5000/
+4. Open Google Chrome and access ```http://127.0.0.1:5000/```
 
-For developer mode use "export FLASK_ENV=development"
+For developer mode use ```export FLASK_ENV=development```
