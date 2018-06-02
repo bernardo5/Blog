@@ -157,3 +157,40 @@ _Description:(**BookName**, BookImage, whereToBuyBook, AuthorName, AuthorDescrip
 
 
 
+## Backend
+
+In order to access the database from Flask, the following package was installed
+
+```
+pip install flask-sqlalchemy
+```
+
+## Docker connection to the localhost
+
+In case you are just creating a new container for postgres, follow the docker hub instructions.
+
+In case you have just created one, but have forgotten to connect it to localhost [https://stackoverflow.com/questions/19335444/how-do-i-assign-a-port-mapping-to-an-existing-docker-container]:
+
+1. stop running container
+
+`docker stop test01`
+
+2. commit the container
+
+`docker commit test01 test02`
+
+NOTE: The above, test02 is a new image that I'm constructing from the test01 container.
+
+3. re-run from the commited image
+
+`docker run -p 8080:8080 -td test02`
+
+
+
+
+
+
+
+
+
+
