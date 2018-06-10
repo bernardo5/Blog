@@ -14,7 +14,13 @@ bootstrap=Bootstrap(app)
 
 @app.route('/')
 def landingPage():
-	return render_template('index.html')
+    returnQueryBooks=Description.query.all();
+    mybooks=[]
+    #iterate through all the books
+    for singleDescription in returnQueryBooks:
+        mybooks.append(Book(singleDescription.bookname, singleDescription.date, singleDescription.tag, singleDescription.bookimage, singleDescription.endpoint))
+    print mybooks
+    return render_template('index.html', books=mybooks)
 
 @app.route('/aboutUs')
 def aboutUs():
@@ -125,9 +131,11 @@ def add_header(r):
 
 class Description(db.Model):
     __tablename__ = 'description'
-
+    endpoint=db.Column(db.Text)
     bookname=db.Column(db.Text, primary_key=True)
     bookimage=db.Column(db.Text)
+    tag=db.Column(db.Text)
+    date=db.Column(db.Date)
     wheretobuy=db.Column(db.Text)
     authorname=db.Column(db.Text)
     authordescription=db.Column(db.Text)
@@ -145,7 +153,13 @@ class Description(db.Model):
     def __repr__(self):
         return '<Book %r>' % self.bookname
 
-
+class Book():
+    def __init__(self, name, date, tag, image, endpoint):
+        self.name=name
+        self.date=date
+        self.tag=tag
+        self.image=image
+        self.endpoint=endpoint
 
 if __name__=="__main__":
     app.run(debug=True)

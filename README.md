@@ -66,20 +66,24 @@ For developer mode use ```export FLASK_ENV=development```
 
 6. Create the desired tables and insert the values: 
 
-* Table creation: ``` CREATE TABLE Description(BookName text, BookImage text, whereToBuy text, AuthorName text, AuthorDescription text, bookIntro text, FirstQuote text, FirstQuoteAuthorName text, QuestionsAskedToTheReader text, introToContent text, questionContent text, SecondQuote text, SecondQuoteAuthorName text, CloseBook text, CallToAction text); ```
+* Table creation: ``` CREATE TABLE Description(endpoint text, BookName text, BookImage text, Tag text, Date Date, whereToBuy text, AuthorName text, AuthorDescription text, bookIntro text, FirstQuote text, FirstQuoteAuthorName text, QuestionsAskedToTheReader text, introToContent text, questionContent text, SecondQuote text, SecondQuoteAuthorName text, CloseBook text, CallToAction text); ```
 
 * Values Insertion (1): 
 
 ``` 
-insert into Description(BookName, BookImage, whereToBuy, AuthorName, AuthorDescription, bookIntro, FirstQuote, FirstQuoteAuthorName, QuestionsAskedToTheReader, introToContent, questionContent, SecondQuote, SecondQuoteAuthorName, CloseBook, CallToAction) values ('Rich Dad Poor Dad', 'richdadpoordad.jpg', 'As you can see in the photo, my version of the book is a Portuguese translated version. Worldwide, you can get this book from normal online bookstores.', 'Robert T. Kiyosaki', 'Author and motivational conference man, Robert is known worldwide as a defensor of financial education. He is the founder of Rich Dad Company, one of the creators of the CASHFLOW educational game and is the author of several bestsellers.', 'Hello everyone! It\’s February post time! The book I\’ll be reviewing this month is called \“Rich Dad Poor Dad\", written by Robert T. Kiyosaki. It was self-published in 1997 and after being picked up commercially, it became a New York Times bestseller.', '\“In school we learn that mistakes are bad, and we are punished for making them. Yet, if you look at the way humans are designed to learn, we learn by making mistakes. We learn to walk by falling down. If we never fell down, we would never walk.\”', ' ','Are you tired of following supposed experts in investments and ending up losing all your money? You want to be financially secure but you don\’t know how to invest, simply don\’t know how the investments work, or you already thought about investing to save extra money, but all you always heard the news talking about is crashes, bad advices and bankrupt. Also, it is very common to heard about get rich quick schemes that all they do is getting people money, right?', 'In his book, Robert T. Kiyosaki tells you his unique economic perspective. He doesn\’t tell you, however, exactly set-by-step what you should invest on. He tells you his story about how he developed his perspective based on the advices from his two fathers – a highly educated father, fiscally poor, and his father\’s best friend, a eighth-grade dropout and self-made millionaire.', 'Now you\’re probably thinking… \“well, this all looks awesome…but there\’s no way I\’m going to get rich…\”. What this book told me is that everyone has its own financial problems, no matter how much money they have. For some is the problem of paying all the bills, for others is the fact that everyone is trying to get money from them. Why not focusing on solving your current financial problems? After that, you\’ll manage to get extra money, and then you\’ll have to deal with other kind of problems.', '\“Winners are not afraid of losing. But losers are. Failure is part of the process of success. People who avoid failure also avoid success.\”', ' ', 'The book talks about ways of developing your financial IQ and ways of becoming wealthier by being able to deal with the problems you encounter in a daily basis. This advices still stick no matter the economy, stocks or real estate.', 'If you are looking for ways to solve your financial problems, this book is for you. No matter how much money you have in your bank account, I\’m sure you\’ll find some good tips that will certainly apply to you.'); 
+insert into Description(endpoint, BookName, BookImage, Tag, Date, whereToBuy, AuthorName, AuthorDescription, bookIntro, FirstQuote, FirstQuoteAuthorName, QuestionsAskedToTheReader, introToContent, questionContent, SecondQuote, SecondQuoteAuthorName, CloseBook, CallToAction) values ('richDadPoorDad', 'Rich Dad Poor Dad', 'richdadpoordad.jpg', 'Finace', '2018-01-10','As you can see in the photo, my version of the book is a Portuguese translated version. Worldwide, you can get this book from normal online bookstores.', 'Robert T. Kiyosaki', 'Author and motivational conference man, Robert is known worldwide as a defensor of financial education. He is the founder of Rich Dad Company, one of the creators of the CASHFLOW educational game and is the author of several bestsellers.', 'Hello everyone! It\’s February post time! The book I\’ll be reviewing this month is called \“Rich Dad Poor Dad\", written by Robert T. Kiyosaki. It was self-published in 1997 and after being picked up commercially, it became a New York Times bestseller.', '\“In school we learn that mistakes are bad, and we are punished for making them. Yet, if you look at the way humans are designed to learn, we learn by making mistakes. We learn to walk by falling down. If we never fell down, we would never walk.\”', ' ','Are you tired of following supposed experts in investments and ending up losing all your money? You want to be financially secure but you don\’t know how to invest, simply don\’t know how the investments work, or you already thought about investing to save extra money, but all you always heard the news talking about is crashes, bad advices and bankrupt. Also, it is very common to heard about get rich quick schemes that all they do is getting people money, right?', 'In his book, Robert T. Kiyosaki tells you his unique economic perspective. He doesn\’t tell you, however, exactly set-by-step what you should invest on. He tells you his story about how he developed his perspective based on the advices from his two fathers – a highly educated father, fiscally poor, and his father\’s best friend, a eighth-grade dropout and self-made millionaire.', 'Now you\’re probably thinking… \“well, this all looks awesome…but there\’s no way I\’m going to get rich…\”. What this book told me is that everyone has its own financial problems, no matter how much money they have. For some is the problem of paying all the bills, for others is the fact that everyone is trying to get money from them. Why not focusing on solving your current financial problems? After that, you\’ll manage to get extra money, and then you\’ll have to deal with other kind of problems.', '\“Winners are not afraid of losing. But losers are. Failure is part of the process of success. People who avoid failure also avoid success.\”', ' ', 'The book talks about ways of developing your financial IQ and ways of becoming wealthier by being able to deal with the problems you encounter in a daily basis. This advices still stick no matter the economy, stocks or real estate.', 'If you are looking for ways to solve your financial problems, this book is for you. No matter how much money you have in your bank account, I\’m sure you\’ll find some good tips that will certainly apply to you.'); 
 ```
 
 * Values Insertion (2): 
 
 ```
-insert into Description(BookName, BookImage, whereToBuy, AuthorName, AuthorDescription, bookIntro, FirstQuote, FirstQuoteAuthorName, QuestionsAskedToTheReader, introToContent, questionContent, SecondQuote, SecondQuoteAuthorName, CloseBook, CallToAction) values ('How to make friends and Influence People', 
+insert into Description(endpoint, BookName, BookImage, Tag, Date, whereToBuy, AuthorName, AuthorDescription, bookIntro, FirstQuote, FirstQuoteAuthorName, QuestionsAskedToTheReader, introToContent, questionContent, SecondQuote, SecondQuoteAuthorName, CloseBook, CallToAction) values ('ComoFazerAmigosEINfluenciarPessoas', 'How to make friends and Influence People', 
 
 'ComoFazerAmigosEINfluenciarPessoas.jpg', 
+
+'Psychology',
+
+'2018-02-02',
 
 'you can get this book in pretty much every book store.', 
 
@@ -111,11 +115,17 @@ insert into Description(BookName, BookImage, whereToBuy, AuthorName, AuthorDescr
 * Values insertion (3):
 
 ```
-insert into Description(BookName, BookImage, whereToBuy, AuthorName, AuthorDescription, bookIntro, FirstQuote, FirstQuoteAuthorName, QuestionsAskedToTheReader, introToContent, questionContent, SecondQuote, SecondQuoteAuthorName, CloseBook, CallToAction) values (
+insert into Description(endpoint, BookName, BookImage, Tag, Date, whereToBuy, AuthorName, AuthorDescription, bookIntro, FirstQuote, FirstQuoteAuthorName, QuestionsAskedToTheReader, introToContent, questionContent, SecondQuote, SecondQuoteAuthorName, CloseBook, CallToAction) values (
+
+'DOTCOM',
 
 'DOTCOM SECRETS', 
 
 'DOTCOM.jpg', 
+
+'Online Business',
+
+'2018-03-10',
 
 'I got it in 2017 from a facebook targeted post, where i got a free+shipping offer. My advice is that if you want to read the book, follow Russell and send him a DM.', 
 
@@ -159,10 +169,12 @@ _Description:(**BookName**, BookImage, whereToBuyBook, AuthorName, AuthorDescrip
 
 ## Backend
 
-In order to access the database from Flask, the following package was installed
+In order to access the database from Flask, the following packages were installed
 
 ```
 pip install flask-sqlalchemy
+
+pip install psycopg2
 ```
 
 ## Docker connection to the localhost

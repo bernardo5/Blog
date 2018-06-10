@@ -12,27 +12,40 @@
 <div class="myText">
 
 	<div class="books_wrapper">
+		{% for book in books %}
 			<div class="book_wrapper">
-				<a href="{{ url_for('richDadPoorDad') }}"><img class="book_image" src="{{url_for('static', filename='richdadpoordad.jpg')}}"></a>
-				<p class="book_category">Online business</p>
-				<p class="book_name"><a href="{{ url_for('richDadPoorDad') }}">Rich Dad Poor Dad</a></p>
-				<p class="book_date">January 10, 2018</p>
+				<a href="{{ url_for(book.endpoint) }}"><img class="book_image" src="{{url_for('static', filename=book.image)}}"></a>
+				<p class="book_category">{{book.tag}}</p>
+				<p class="book_name"><a href="{{ url_for(book.endpoint) }}">{{book.name}}</a></p>
+				<p class="book_date">{{book.date}}</p>
 			</div>
-
-			<div class="book_wrapper">
-				<a href="{{ url_for('ComoFazerAmigosEINfluenciarPessoas') }}"><img class="book_image" src="{{url_for('static', filename='ComoFazerAmigosEINfluenciarPessoas.jpg')}}"></a>
-				<p class="book_category">420 friends</p>
-				<p class="book_name"><a href="{{ url_for('ComoFazerAmigosEINfluenciarPessoas') }}">How To Make Friends and Influence People</a></p>
-				<p class="book_date">May the 4th, 2018</p>
-			</div>
-
-			<div class="book_wrapper">
-				<a href="{{ url_for('DOTCOM') }}"><img class="book_image" src="{{url_for('static', filename='DOTCOM.jpg')}}"></a>
-				<p class="book_category">Secret Files</p>
-				<p class="book_name"><a href="{{ url_for('DOTCOM') }}">DOTCOM SECRETS</a></p>
-				<p class="book_date">May the 30th, 2018</p>
-			</div>
+		
+		{% endfor %}
 	</div>
+
+	<!-- 
+	<div class="book_wrapper">
+			<a href="{{ url_for('richDadPoorDad') }}"><img class="book_image" src="{{url_for('static', filename='richdadpoordad.jpg')}}"></a>
+			<p class="book_category">Online business</p>
+			<p class="book_name"><a href="{{ url_for('richDadPoorDad') }}">Rich Dad Poor Dad</a></p>
+			<p class="book_date">January 10, 2018</p>
+		</div>
+
+		<div class="book_wrapper">
+			<a href="{{ url_for('ComoFazerAmigosEINfluenciarPessoas') }}"><img class="book_image" src="{{url_for('static', filename='ComoFazerAmigosEINfluenciarPessoas.jpg')}}"></a>
+			<p class="book_category">420 friends</p>
+			<p class="book_name"><a href="{{ url_for('ComoFazerAmigosEINfluenciarPessoas') }}">How To Make Friends and Influence People</a></p>
+			<p class="book_date">May the 4th, 2018</p>
+		</div>
+
+		<div class="book_wrapper">
+			<a href="{{ url_for('DOTCOM') }}"><img class="book_image" src="{{url_for('static', filename='DOTCOM.jpg')}}"></a>
+			<p class="book_category">Secret Files</p>
+			<p class="book_name"><a href="{{ url_for('DOTCOM') }}">DOTCOM SECRETS</a></p>
+			<p class="book_date">May the 30th, 2018</p>
+		</div>
+
+	-->
 			<!--
 			
 		<tr>
