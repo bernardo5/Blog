@@ -30,91 +30,31 @@ def aboutUs():
 def contact():
 	return render_template('contact.html')
 
-@app.route('/richDadPoorDad')
-def richDadPoorDad():
+@app.route('/bookRenderPage/<booknamedb>')
+def bookRenderPage(booknamedb):
     #database query to the book for the url provided
-    returnQueryResultRichDadPoorDad=Description.query.filter_by(bookname="Rich Dad Poor Dad").first()
+    returnQueryResult=Description.query.filter_by(endpoint=booknamedb).first()
 
-    BookName = returnQueryResultRichDadPoorDad.bookname
-    bookImage=returnQueryResultRichDadPoorDad.bookimage
-    whereToBuy = returnQueryResultRichDadPoorDad.wheretobuy
-    AuthorName = returnQueryResultRichDadPoorDad.authorname 
+    BookName = returnQueryResult.bookname
+    bookImage=returnQueryResult.bookimage
+    whereToBuy = returnQueryResult.wheretobuy
+    AuthorName = returnQueryResult.authorname 
 
-    AuthorDescription = returnQueryResultRichDadPoorDad.authordescription
-    bookIntro = returnQueryResultRichDadPoorDad.bookintro
-    FirstQuote = returnQueryResultRichDadPoorDad.firstquote
+    AuthorDescription = returnQueryResult.authordescription
+    bookIntro = returnQueryResult.bookintro
+    FirstQuote = returnQueryResult.firstquote
 
-    FirstQuoteAuthorName = returnQueryResultRichDadPoorDad.firstquoteauthorname 
-    QuestionsAskedToTheReader = returnQueryResultRichDadPoorDad.questionsaskedtothereader 
-    introToContent = returnQueryResultRichDadPoorDad.introtocontent 
-    questionContent = returnQueryResultRichDadPoorDad.questioncontent
+    FirstQuoteAuthorName = returnQueryResult.firstquoteauthorname 
+    QuestionsAskedToTheReader = returnQueryResult.questionsaskedtothereader 
+    introToContent = returnQueryResult.introtocontent 
+    questionContent = returnQueryResult.questioncontent
 
-    SecondQuote = returnQueryResultRichDadPoorDad.secondquote   
-    SecondQuoteAuthorName = returnQueryResultRichDadPoorDad.secondquoteauthorname 
-    CloseBook = returnQueryResultRichDadPoorDad.closebook 
-    CallToAction = returnQueryResultRichDadPoorDad.calltoaction
+    SecondQuote = returnQueryResult.secondquote   
+    SecondQuoteAuthorName = returnQueryResult.secondquoteauthorname 
+    CloseBook = returnQueryResult.closebook 
+    CallToAction = returnQueryResult.calltoaction
 
-    return render_template('BookBase.html', BookName=BookName, bookImage=bookImage, whereToBuy=whereToBuy, AuthorName=AuthorName, AuthorDescription=AuthorDescription, bookIntro=bookIntro, FirstQuote=FirstQuote, FirstQuoteAuthorName=FirstQuoteAuthorName, QuestionsAskedToTheReader=QuestionsAskedToTheReader, introToContent=introToContent, questionContent=questionContent, SecondQuote=SecondQuote, SecondQuoteAuthorName=SecondQuoteAuthorName, CloseBook=CloseBook, CallToAction=CallToAction)
-
-@app.route('/ComoFazerAmigosEINfluenciarPessoas')
-def ComoFazerAmigosEINfluenciarPessoas():
-    #database query to the book for the url provided
-    returnQueryResultRichDadPoorDad=Description.query.filter_by(bookname="How to make friends and Influence People").first()
-
-    BookName = returnQueryResultRichDadPoorDad.bookname
-    bookImage=returnQueryResultRichDadPoorDad.bookimage
-    whereToBuy = returnQueryResultRichDadPoorDad.wheretobuy
-    AuthorName = returnQueryResultRichDadPoorDad.authorname 
-
-    AuthorDescription = returnQueryResultRichDadPoorDad.authordescription
-    bookIntro = returnQueryResultRichDadPoorDad.bookintro
-    FirstQuote = returnQueryResultRichDadPoorDad.firstquote
-
-    FirstQuoteAuthorName = returnQueryResultRichDadPoorDad.firstquoteauthorname 
-    QuestionsAskedToTheReader = returnQueryResultRichDadPoorDad.questionsaskedtothereader 
-    introToContent = returnQueryResultRichDadPoorDad.introtocontent 
-    questionContent = returnQueryResultRichDadPoorDad.questioncontent
-
-    SecondQuote = returnQueryResultRichDadPoorDad.secondquote   
-    SecondQuoteAuthorName = returnQueryResultRichDadPoorDad.secondquoteauthorname 
-    CloseBook = returnQueryResultRichDadPoorDad.closebook 
-    CallToAction = returnQueryResultRichDadPoorDad.calltoaction
-
-    return render_template('BookBase.html', BookName=BookName, bookImage=bookImage, whereToBuy=whereToBuy, AuthorName=AuthorName, AuthorDescription=AuthorDescription, bookIntro=bookIntro, FirstQuote=FirstQuote, FirstQuoteAuthorName=FirstQuoteAuthorName, QuestionsAskedToTheReader=QuestionsAskedToTheReader, introToContent=introToContent, questionContent=questionContent, SecondQuote=SecondQuote, SecondQuoteAuthorName=SecondQuoteAuthorName, CloseBook=CloseBook, CallToAction=CallToAction)
-
-@app.route('/DOTCOM')
-def DOTCOM():
-    #database query to the book for the url provided
-    returnQueryResultRichDadPoorDad=Description.query.filter_by(bookname="DOTCOM SECRETS").first()
-
-    BookName = returnQueryResultRichDadPoorDad.bookname
-    bookImage=returnQueryResultRichDadPoorDad.bookimage
-    whereToBuy = returnQueryResultRichDadPoorDad.wheretobuy
-    AuthorName = returnQueryResultRichDadPoorDad.authorname 
-
-    AuthorDescription = returnQueryResultRichDadPoorDad.authordescription
-    bookIntro = returnQueryResultRichDadPoorDad.bookintro
-    FirstQuote = returnQueryResultRichDadPoorDad.firstquote
-
-    FirstQuoteAuthorName = returnQueryResultRichDadPoorDad.firstquoteauthorname 
-    QuestionsAskedToTheReader = returnQueryResultRichDadPoorDad.questionsaskedtothereader 
-    introToContent = returnQueryResultRichDadPoorDad.introtocontent 
-    questionContent = returnQueryResultRichDadPoorDad.questioncontent
-
-    SecondQuote = returnQueryResultRichDadPoorDad.secondquote   
-    SecondQuoteAuthorName = returnQueryResultRichDadPoorDad.secondquoteauthorname 
-    CloseBook = returnQueryResultRichDadPoorDad.closebook 
-    CallToAction = returnQueryResultRichDadPoorDad.calltoaction
-
-    return render_template('BookBase.html', BookName=BookName, bookImage=bookImage, whereToBuy=whereToBuy, AuthorName=AuthorName, AuthorDescription=AuthorDescription, bookIntro=bookIntro, FirstQuote=FirstQuote, FirstQuoteAuthorName=FirstQuoteAuthorName, QuestionsAskedToTheReader=QuestionsAskedToTheReader, introToContent=introToContent, questionContent=questionContent, SecondQuote=SecondQuote, SecondQuoteAuthorName=SecondQuoteAuthorName, CloseBook=CloseBook, CallToAction=CallToAction)
-
-@app.route('/db')
-def deb():
-    returnQueryResult=Description.query.all()
-    myList='Start: '
-    for bookName in returnQueryResult:
-        myList=myList + ' ' + str(bookName.bookname)
-    return myList
+    return render_template(booknamedb+'.html', BookName=BookName, bookImage=bookImage, whereToBuy=whereToBuy, AuthorName=AuthorName, AuthorDescription=AuthorDescription, bookIntro=bookIntro, FirstQuote=FirstQuote, FirstQuoteAuthorName=FirstQuoteAuthorName, QuestionsAskedToTheReader=QuestionsAskedToTheReader, introToContent=introToContent, questionContent=questionContent, SecondQuote=SecondQuote, SecondQuoteAuthorName=SecondQuoteAuthorName, CloseBook=CloseBook, CallToAction=CallToAction)
 
 @app.after_request
 def add_header(r):

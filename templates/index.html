@@ -14,7 +14,7 @@
 	<div class="books_wrapper">
 		{% for book in books %}
 			<div class="book_wrapper">
-				<a href="{{ url_for(book.endpoint) }}"><img class="book_image" src="{{url_for('static', filename=book.image)}}"></a>
+				<a href="{{ url_for('.bookRenderPage', booknamedb = book.endpoint) }}"><img class="book_image" src="{{url_for('static', filename=book.image)}}"></a>
 				<p class="book_category">{{book.tag}}</p>
 				<p class="book_name"><a href="{{ url_for(book.endpoint) }}">{{book.name}}</a></p>
 				<p class="book_date">{{book.date}}</p>
