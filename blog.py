@@ -36,25 +36,46 @@ def bookRenderPage(booknamedb):
     returnQueryResult=Description.query.filter_by(endpoint=booknamedb).first()
 
     BookName = returnQueryResult.bookname
+    BookName=BookName.replace('\\', '')
+
     bookImage=returnQueryResult.bookimage
     whereToBuy = returnQueryResult.wheretobuy
+    whereToBuy=whereToBuy.replace('\\', '')
+
     AuthorName = returnQueryResult.authorname 
 
     AuthorDescription = returnQueryResult.authordescription
+    AuthorDescription=AuthorDescription.replace('\\', '')
+
     bookIntro = returnQueryResult.bookintro
+    bookIntro=bookIntro.replace('\\', '')
+
     FirstQuote = returnQueryResult.firstquote
+    FirstQuote=FirstQuote.replace('\\', '')
 
     FirstQuoteAuthorName = returnQueryResult.firstquoteauthorname 
-    QuestionsAskedToTheReader = returnQueryResult.questionsaskedtothereader 
+    
+    QuestionsAskedToTheReader = returnQueryResult.questionsaskedtothereader
+    QuestionsAskedToTheReader=QuestionsAskedToTheReader.replace('\\', '')
+
     introToContent = returnQueryResult.introtocontent 
+    introToContent=introToContent.replace('\\', '')
+
     questionContent = returnQueryResult.questioncontent
+    questionContent=questionContent.replace('\\', '')
 
-    SecondQuote = returnQueryResult.secondquote   
+    SecondQuote = returnQueryResult.secondquote  
+    SecondQuote=SecondQuote.replace('\\', '')
+
     SecondQuoteAuthorName = returnQueryResult.secondquoteauthorname 
+    
     CloseBook = returnQueryResult.closebook 
-    CallToAction = returnQueryResult.calltoaction
+    CloseBook=CloseBook.replace('\\', '')
 
-    return render_template(booknamedb+'.html', BookName=BookName, bookImage=bookImage, whereToBuy=whereToBuy, AuthorName=AuthorName, AuthorDescription=AuthorDescription, bookIntro=bookIntro, FirstQuote=FirstQuote, FirstQuoteAuthorName=FirstQuoteAuthorName, QuestionsAskedToTheReader=QuestionsAskedToTheReader, introToContent=introToContent, questionContent=questionContent, SecondQuote=SecondQuote, SecondQuoteAuthorName=SecondQuoteAuthorName, CloseBook=CloseBook, CallToAction=CallToAction)
+    CallToAction = returnQueryResult.calltoaction
+    CallToAction=CallToAction.replace('\\', '')
+
+    return render_template('BookBase.html', BookName=BookName, bookImage=bookImage, whereToBuy=whereToBuy, AuthorName=AuthorName, AuthorDescription=AuthorDescription, bookIntro=bookIntro, FirstQuote=FirstQuote, FirstQuoteAuthorName=FirstQuoteAuthorName, QuestionsAskedToTheReader=QuestionsAskedToTheReader, introToContent=introToContent, questionContent=questionContent, SecondQuote=SecondQuote, SecondQuoteAuthorName=SecondQuoteAuthorName, CloseBook=CloseBook, CallToAction=CallToAction)
 
 @app.after_request
 def add_header(r):
