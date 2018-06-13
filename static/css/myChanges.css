@@ -48,10 +48,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  max-width: 75%;
+  max-width: 50%;
   min-width: 300px;
   margin: 20px;
-  margin-left: 12%;
+  margin-left: 25%;
   background: #fafafa;
   border: 1px solid #eee;
   padding: 30px 30px 30px 30px;
