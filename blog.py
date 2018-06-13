@@ -1,13 +1,26 @@
 from flask import Flask, render_template, request, make_response, redirect, abort
 from flask_bootstrap import Bootstrap
+#from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 app=Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI'] ='postgresql://postgres:pass@localhost:5432/honestlibraryreviewsdb'
+app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+db = SQLAlchemy(app)
+
 app.debug=True
 bootstrap=Bootstrap(app)
 
 @app.route('/')
 def landingPage():
-	return render_template('index.html')
+    returnQueryBooks=Description.query.all();
+    mybooks=[]
+    #iterate through all the books
+    for singleDescription in returnQueryBooks:
+        mybooks.append(Book(singleDescription.bookname, singleDescription.date, singleDescription.tag, singleDescription.bookimage, singleDescription.endpoint))
+    print mybooks
+    return render_template('index.html', books=mybooks)
 
 @app.route('/aboutUs')
 def aboutUs():
@@ -17,20 +30,52 @@ def aboutUs():
 def contact():
 	return render_template('contact.html')
 
-@app.route('/richDadPoorDad')
-def richDadPoorDad():
-	bookImage='richdadpoordad.jpg'
-	return render_template('richDadPoorDad.html', bookImage=bookImage)
+@app.route('/bookRenderPage/<booknamedb>')
+def bookRenderPage(booknamedb):
+    #database query to the book for the url provided
+    returnQueryResult=Description.query.filter_by(endpoint=booknamedb).first()
 
-@app.route('/ComoFazerAmigosEINfluenciarPessoas')
-def ComoFazerAmigosEINfluenciarPessoas():
-    bookImage='ComoFazerAmigosEINfluenciarPessoas.jpg'
-    return render_template('ComoFazerAmigosEINfluenciarPessoas.html', bookImage=bookImage)
+    BookName = returnQueryResult.bookname
+    BookName=BookName.replace('\\', '')
 
-@app.route('/DOTCOM')
-def DOTCOM():
-    bookImage='DOTCOM.jpg'
-    return render_template('DOTCOM.html', bookImage=bookImage)
+    bookImage=returnQueryResult.bookimage
+    whereToBuy = returnQueryResult.wheretobuy
+    whereToBuy=whereToBuy.replace('\\', '')
+
+    AuthorName = returnQueryResult.authorname 
+
+    AuthorDescription = returnQueryResult.authordescription
+    AuthorDescription=AuthorDescription.replace('\\', '')
+
+    bookIntro = returnQueryResult.bookintro
+    bookIntro=bookIntro.replace('\\', '')
+
+    FirstQuote = returnQueryResult.firstquote
+    FirstQuote=FirstQuote.replace('\\', '')
+
+    FirstQuoteAuthorName = returnQueryResult.firstquoteauthorname 
+    
+    QuestionsAskedToTheReader = returnQueryResult.questionsaskedtothereader
+    QuestionsAskedToTheReader=QuestionsAskedToTheReader.replace('\\', '')
+
+    introToContent = returnQueryResult.introtocontent 
+    introToContent=introToContent.replace('\\', '')
+
+    questionContent = returnQueryResult.questioncontent
+    questionContent=questionContent.replace('\\', '')
+
+    SecondQuote = returnQueryResult.secondquote  
+    SecondQuote=SecondQuote.replace('\\', '')
+
+    SecondQuoteAuthorName = returnQueryResult.secondquoteauthorname 
+    
+    CloseBook = returnQueryResult.closebook 
+    CloseBook=CloseBook.replace('\\', '')
+
+    CallToAction = returnQueryResult.calltoaction
+    CallToAction=CallToAction.replace('\\', '')
+
+    return render_template('BookBase.html', BookName=BookName, bookImage=bookImage, whereToBuy=whereToBuy, AuthorName=AuthorName, AuthorDescription=AuthorDescription, bookIntro=bookIntro, FirstQuote=FirstQuote, FirstQuoteAuthorName=FirstQuoteAuthorName, QuestionsAskedToTheReader=QuestionsAskedToTheReader, introToContent=introToContent, questionContent=questionContent, SecondQuote=SecondQuote, SecondQuoteAuthorName=SecondQuoteAuthorName, CloseBook=CloseBook, CallToAction=CallToAction)
 
 @app.after_request
 def add_header(r):
@@ -43,3 +88,39 @@ def add_header(r):
     r.headers["Expires"] = "0"
     r.headers['Cache-Control'] = 'public, max-age=0'
     return r
+
+
+class Description(db.Model):
+    __tablename__ = 'description'
+    endpoint=db.Column(db.Text)
+    bookname=db.Column(db.Text, primary_key=True)
+    bookimage=db.Column(db.Text)
+    tag=db.Column(db.Text)
+    date=db.Column(db.Date)
+    wheretobuy=db.Column(db.Text)
+    authorname=db.Column(db.Text)
+    authordescription=db.Column(db.Text)
+    bookintro=db.Column(db.Text)
+    firstquote=db.Column(db.Text)
+    firstquoteauthorname=db.Column(db.Text)
+    questionsaskedtothereader=db.Column(db.Text)
+    introtocontent=db.Column(db.Text)
+    questioncontent=db.Column(db.Text)
+    secondquote=db.Column(db.Text)
+    secondquoteauthorname=db.Column(db.Text)
+    closebook=db.Column(db.Text)
+    calltoaction=db.Column(db.Text)
+
+    def __repr__(self):
+        return '<Book %r>' % self.bookname
+
+class Book():
+    def __init__(self, name, date, tag, image, endpoint):
+        self.name=name
+        self.date=date
+        self.tag=tag
+        self.image=image
+        self.endpoint=endpoint
+
+if __name__=="__main__":
+    app.run(debug=True)

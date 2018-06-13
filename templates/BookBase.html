@@ -1,6 +1,6 @@
 {% extends "master.html" %}
 
-{% block title %}Rich Dad Poor Dad{%endblock%}
+{% block title %} {{BookName}} {%endblock%}
 
 {% block ArticleHeader %}
 
@@ -8,7 +8,7 @@
 
 {% block PlainText %}
 
-<p class="myText">{% block bookintro%}{% endblock %}</p>
+<p class="myText">{{bookIntro}}</p>
 
 <p></p><p></p>
 
@@ -17,52 +17,54 @@
 	<div class="quote">  </div>
 
 	<div class="quote_text">
-		<p>{% block firstQuote%}{% endblock %}</p>
-		<p>{% block firstAuthorName%}{% endblock %}</p>
+		<p>{{FirstQuote}}</p>
+		<p>{{FirstQuoteAuthorName}}</p>
 	</div>
 
 </div>
 
 <p></p><p></p>
 
-<p class="myText">{% block questionsAskedToReader%}{% endblock %}</p>
+<p class="myText">{{QuestionsAskedToTheReader}}</p>
 
 <p></p><p></p>
 
-<p class="myText">{% block introToContent%}{% endblock %}</p>
+<p class="myText">{{introToContent}}</p>
 
 <p></p><p></p>
 
 <div class="bookImageInline">
-	{% block midBookImage %}
-
-	{%endblock%}
+	<img class="bookImage" src="{{url_for('static', filename=bookImage)}}">
 </div>
 
 <p></p><p></p>
 
-<p class="myText">{% block questionContent%}{% endblock %}</p>
+<p class="myText">{{questionContent}}</p>
 
 <p></p><p></p>
+
+{% if  not SecondQuote.isspace() %}
 
 <div class="quote_wrapper">
 
 	<div class="quote">  </div>
 
 	<div class="quote_text">
-		<p>{% block secondQuote%}{% endblock %}</p>
-		<p>{% block secondAuthorName%}{% endblock %}</p>
+		<p>{{SecondQuote}}</p>
+		<p>{{SecondQuoteAuthorName}}</p>
 	</div>
 
 </div>
 
-<p></p><p></p>
-
-<p class="myText">{% block closeBook%}{% endblock %}</p>
+{% endif %}
 
 <p></p><p></p>
 
-<p class="myText">{% block callToAction%}{% endblock %}</p>
+<p class="myText">{{CloseBook}}</p>
+
+<p></p><p></p>
+
+<p class="myText">{{CallToAction}}</p>
 
 <p></p><p></p>
 
@@ -70,13 +72,13 @@
 
 <h3 style="font-weight: bold;" class="myText">About the author:</h3>
 
-<p class="myText">{% block aboutAuthor %}{% endblock %}</p>
+<p class="myText">{{AuthorDescription}}</p>
 
 <p></p><p></p>
 
 <h3 style="font-weight: bold;" class="myText">Where you can get this book:</h3>
 
-<p class="myText">{% block getBook %}{% endblock %}</p>
+<p class="myText">{{whereToBuy}}</p>
 
 <p></p><p></p>
 
