@@ -37,6 +37,7 @@ Installation requirements:
 3. Activate it --> ```source <name>/bin/activate```
 
 4. Install Flask --> ```pip install Flask```
+you might need to upgrade pip: ```curl https://bootstrap.pypa.io/get-pip.py | python```
 
 5. Install Bootstrap --> ```pip install flask-bootstrap```
 
